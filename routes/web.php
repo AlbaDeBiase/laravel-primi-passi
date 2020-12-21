@@ -14,7 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $data = [
+        'nome_negozio'=>'Tutto per la casa',
+        'descrizione'=>'Rifornimenti per la casa',
+        'lista_accessori'=>[
+            'piatti',
+            'bicchieri',
+            'tovaglioli',
+            'posate'
+        ],
+    ];
+    return view('home',$data);
 });
 
 Route::get('/cosa-facciamo', function () {

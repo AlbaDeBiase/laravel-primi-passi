@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body>
-        
+        <h1>Nome negozio</h1>
+        <h2>{{ $nome_negozio }}</h2>
+        <h2>Negozio di</h2>
+        <h3>{{$descrizione}}</h3>
+        <p>Vasto assortimento di:</p>
+        @foreach($lista_accessori as $accessorio)
+        <p>{{$accessorio}}</p>
+        @endforeach
     </body>
 </html>
