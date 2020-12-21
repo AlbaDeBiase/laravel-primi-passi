@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// HOME
+
 Route::get('/', function () {
     $data = [
         'nome_negozio'=>'Tutto per la casa',
@@ -25,12 +27,34 @@ Route::get('/', function () {
         ],
     ];
     return view('home',$data);
-});
+})->name('home');
+
+// CHI SIAMO
+
+Route::get('/Chi-siamo', function () {
+    $data = [
+        'mission'=> 'La nostra mission è fornire tutto il necessario per la casa, accontentare i nostri clienti in ogni piccola richiesta'
+
+    ];
+    return view('chi-siamo', $data);
+})->name('who');
+
+// COSA FACCIAMO
 
 Route::get('/cosa-facciamo', function () {
-    return view('do');
-});
+    $data = [
+        'what'=> 'Cosa Facciamo',
+        'testo' => 'Con diversi negozi in tutta italia ci occupiamo di piccoli accessori e oggetti per la casa, disponibili sia nei nostri negozi fisici, che online'
+    ];
+    return view('cosa-facciamo',$data);
+})->name('do');
+
+// CONTATTI
 
 Route::get('/contatti', function () {
-    return view('contacts');
-});
+    $data = [
+        'email'=>'casa@gmail.com',
+        'telefono'=> '09846363738',
+    ];
+    return view('contatti',$data);
+})->name('contacts');
